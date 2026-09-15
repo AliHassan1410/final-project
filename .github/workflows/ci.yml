@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install backend dependencies
+        working-directory: fullstack-capstone-project/backend
+        run: npm install
+
+      - name: Check syntax of backend source files
+        working-directory: fullstack-capstone-project/backend
+        run: |
+          node --check app.js
+          node --check db.js
+          node --check giftRoutes.js
+          node --check searchRoutes.js
+          node --check authRoutes.js
+          node --check sentiment/index.js
+
+      - name: Verify backend modules load correctly
+        working-directory: fullstack-capstone-project/backend
+        run: |
+          node -e "
+            require('./app.js');
+            require('./giftRoutes.js');
+            require('./searchRoutes.js');
+            require('./authRoutes.js');
+            require('./sentiment/index.js');
+            console.log('All backend modules loaded successfully.');
+          "

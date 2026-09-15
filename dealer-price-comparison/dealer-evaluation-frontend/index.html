@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealer Price Evaluation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dealer Price Evaluation</h1>
+      <p class="subtitle">Compare prices for a product across dealers</p>
+    </header>
+
+    <main>
+      <div class="field">
+        <label for="productSelect">Product</label>
+        <select id="productSelect">
+          <option value="">-- Select a product --</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="dealerSelect">Dealer</label>
+        <select id="dealerSelect" disabled>
+          <option value="">-- Select a dealer --</option>
+        </select>
+      </div>
+
+      <section id="result" class="result"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

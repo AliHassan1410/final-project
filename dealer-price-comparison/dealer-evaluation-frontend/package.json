@@ -1,0 +1,12 @@
+{
+  "name": "dealer-evaluation-frontend",
+  "version": "1.0.0",
+  "description": "Dealer Evaluation Frontend Microservice - lets a shopper pick a product and compare dealer prices",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

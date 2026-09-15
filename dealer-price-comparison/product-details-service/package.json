@@ -1,0 +1,13 @@
+{
+  "name": "product-details-service",
+  "version": "1.0.0",
+  "description": "Product Details Microservice - serves the list of products available for price comparison",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

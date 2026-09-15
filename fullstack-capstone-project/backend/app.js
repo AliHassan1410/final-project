@@ -5,7 +5,7 @@ require('dotenv').config();
 const giftRoutes = require('./giftRoutes');
 const searchRoutes = require('./searchRoutes');
 const authRoutes = require('./authRoutes');
-const analyzeSentiment = require('./sentiment');
+const analyzeSentiment = require('../sentiment');
 
 const app = express();
 app.use(cors());

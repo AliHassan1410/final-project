@@ -19,6 +19,10 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install sentiment module dependencies
+        working-directory: fullstack-capstone-project/sentiment
+        run: npm install
+
       - name: Install backend dependencies
         working-directory: fullstack-capstone-project/backend
         run: npm install
@@ -31,7 +35,7 @@ jobs:
           node --check giftRoutes.js
           node --check searchRoutes.js
           node --check authRoutes.js
-          node --check sentiment/index.js
+          node --check ../sentiment/index.js
 
       - name: Verify backend modules load correctly
         working-directory: fullstack-capstone-project/backend
@@ -41,6 +45,6 @@ jobs:
             require('./giftRoutes.js');
             require('./searchRoutes.js');
             require('./authRoutes.js');
-            require('./sentiment/index.js');
+            require('../sentiment/index.js');
             console.log('All backend modules loaded successfully.');
           "

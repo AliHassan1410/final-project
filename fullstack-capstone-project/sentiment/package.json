@@ -1,0 +1,9 @@
+{
+  "name": "fullstack-capstone-sentiment",
+  "version": "1.0.0",
+  "description": "Sentiment analysis module for the Gift Shop capstone project",
+  "main": "index.js",
+  "dependencies": {
+    "natural": "^7.0.6"
+  }
+}
